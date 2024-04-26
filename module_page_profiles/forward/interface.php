@@ -100,8 +100,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="profile_user_nickname">
-			<?= action_text_clear(action_text_trim($Player->get_name(), 20)) ?>
+		<div <?php if($SBBans[0]['duration'] == '0' && $SBBans[0]['status'] === "ACTIVE"){echo 'id="perm-banned"';}?> class="profile_user_nickname">
+			<span><?= action_text_clear(action_text_trim($Player->get_name(), 20)) ?></span>
 		</div>
 		<div class="profile_user_avatar">
 			<?php $General->get_js_relevance_avatar($Player->get_steam_64(), 1) ?>
