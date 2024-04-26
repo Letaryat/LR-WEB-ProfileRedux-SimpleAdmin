@@ -7,11 +7,11 @@
 				</svg>
 				<?= $Translate->get_translate_module_phrase('module_page_profiles', '_Bans'); ?> (<?php echo count($SBBans)?>)
 			</div>
-			<div class="profile_block_content_title col-md-6 center_title"> (<?php echo count($SBComms)?>)
+			<div class="profile_block_content_title col-md-6 center_title"> 
 				<svg viewBox="0 0 640 512">
 					<path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L472.1 344.7c15.2-26 23.9-56.3 23.9-88.7V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 21.2-5.1 41.1-14.2 58.7L416 300.8V96c0-53-43-96-96-96s-96 43-96 96v54.3L38.8 5.1zM344 430.4c20.4-2.8 39.7-9.1 57.3-18.2l-43.1-33.9C346.1 382 333.3 384 320 384c-70.7 0-128-57.3-128-128v-8.7L144.7 210c-.5 1.9-.7 3.9-.7 6v40c0 89.1 66.2 162.7 152 174.4V464H248c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H344V430.4z" />
 				</svg>
-				<?= $Translate->get_translate_module_phrase('module_page_profiles', '_Comms'); ?> 
+				<?= $Translate->get_translate_module_phrase('module_page_profiles', '_Comms'); ?> (<?php echo count($SBComms)?>)
 			</div>
 		</div>
 		<div class="profile_block_content">
@@ -39,30 +39,38 @@
 								<span class="bans_comms_none"><a href="<?= $General->arr_general['site'] ?>profiles/<?= $SBBans[$i]['admin_steamid'] ?>/?search=1"><?= $SBBans[$i]['admin_name'] ?></a></span>
 								<span class="bans_comms_none">
 									<?php
-									if ($SBBans[$i]['duration'] == '0') {
+									if ($SBBans[$i]['duration'] == '0' && $SBBans[$i]['status'] != "UNBANNED") {
 										echo $ban_type['0'];
-									} elseif ($SBBans[$i]['status'] == 'UNBANNED') {
+									} elseif ($SBBans[$i]['status'] === 'UNBANNED') {
 										echo $ban_type['1'];
 									} elseif ($SBBans[$i]['duration'] < '0' && time() >= $SBBans[$i]['ends']) {
 										echo $ban_type['2'];
 									} elseif (time() >= $SBBans[$i]['ends'] && $SBBans[$i]['duration'] != '0') {
 										echo '<div class="color-green"><strike>' . $Modules->action_time_exchange($SBBans[$i]['duration']) . '</strike></div>';
-									} else {
-										echo '<div class="color-gray">' . $SBBans[$i]['duration'] . '</div>';
+									} 
+									elseif($SBBans[$i]['status'] === 'EXPIRED'){
+										echo '<div id="exp" class="color-gray"><strike>' . $SBBans[$i]['duration'] .' minutes</strike></div>';
+									}
+									else {
+										echo '<div id="act" class="color-gray">' . $SBBans[$i]['duration'] .' minutes</div>';
 									} ?>
 								</span>
 								<span>
 									<?php
-									if ($SBBans[$i]['length'] == '0') {
+									if ($SBBans[$i]['duration'] == '0' && $SBBans[$i]['status'] === "ACTIVE") {
 										echo '<div class="color-red">' . $Translate->get_translate_module_phrase('module_page_profiles', '_Permanent') . '</div>';
-									} elseif ($SBBans[$i]['RemoveType'] == 'ACTIVE') {
-										echo '<div class="color-dark">????</div>';
-									} elseif ($SBBans[$i]['length'] < '0' && time() >= $SBBans[$i]['ends']) {
-										echo '<div class="color-dark">????</div>';
-									} elseif (time() >= $SBBans[$i]['ends'] && $SBBans[$i]['length'] != '0') {
-										echo '<div class="color-green">' . $Translate->get_translate_module_phrase('module_page_profiles', '_Expired') . '</div>';
-									} else {
-										echo '<div class="color-gray">' . $SBBans[$i]['ends'] . '</div>';
+									} elseif ($SBBans[$i]['status'] === 'ACTIVE') {
+										echo '<div id="act" class="color-red">'.$SBBans[$i]['ends'].'</div>';
+									} elseif (time() >= $SBBans[$i]['ends'] && $SBBans[$i]['duration'] == '0') {
+										echo '<div class="color-dark">'.$SBBans[$i]['ends'].'</div>';
+									} elseif (time() >= $SBBans[$i]['ends'] && $SBBans[$i]['duration'] != '0') {
+										echo '<div id="exp" class="color-green">' . $Translate->get_translate_module_phrase('module_page_profiles', '_Expired') . '</div>';
+									}
+									elseif ($SBBans[$i]['status'] === 'UNBANNED') {
+										echo '<div id="ub" class="color-green">' . $SBBans[$i]['ends'] . '</div>';
+									}
+									else {
+										echo '<div id="exp" class="color-gray">' . $SBBans[$i]['status'] . '</div>';
 									} ?>
 								</span>
 							</li>

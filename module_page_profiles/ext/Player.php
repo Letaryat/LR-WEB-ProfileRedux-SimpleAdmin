@@ -763,6 +763,7 @@ class Player
                     `sa_bans`.`created`,
                     `sa_bans`.`duration`,
                     `sa_bans`.`ends`,
+                    `sa_bans`.`status`,
                     `sa_bans`.`reason`
                     FROM `sa_bans`
                     WHERE `player_steamid` = '". $this->get_steam_64() ."' ORDER BY `created` DESC");

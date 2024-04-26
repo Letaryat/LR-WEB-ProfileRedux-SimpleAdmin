@@ -4282,6 +4282,7 @@
         color: var(--custom-text-color);
         font-weight: 600;
         gap: 5px;
+        margin-top: 5px;
     }
 
     .profile_user_last_connect svg {
@@ -4630,4 +4631,21 @@ th.text-center.lrweb_table svg{
     .settings_h {
         height: 100%;
     }
+}
+
+#ub{
+    color:#009fff;
+    padding:0 !important;
+}
+#act{
+    color:#ff5353;
+    padding:0 !important;
+}
+#exp{
+    color:#53ff6e;
+    padding:0 !important;
+}
+#active-vip{
+    border: 1px solid #ffab28;
+    box-shadow: 0px 0px 0px 2px rgba(255, 171, 40, 0.33);
 }

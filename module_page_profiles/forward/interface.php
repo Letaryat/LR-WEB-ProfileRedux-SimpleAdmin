@@ -16,7 +16,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="profile_head">
+	<div class="profile_head" <?php if(!empty($Vips)){echo 'id="active-vip"';}?>>
 		<div class="profile_user_middle_block">
 			<div class="profile_head_user_stats">
 				<div class="profile_user_rank_block">

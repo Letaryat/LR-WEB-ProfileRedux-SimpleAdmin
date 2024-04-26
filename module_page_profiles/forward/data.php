@@ -12,14 +12,14 @@ $profile = $Map['params']['id'];
 $search = intval($_GET['search'] ?? 0);
 
 $ban_type = [
-  0 => '<div class="color-red">' . $Translate->get_translate_phrase('_Forever') . '</div>',
-  1 => '<div class="color-blue">' . $Translate->get_translate_phrase('_Unban') . '</div>',
-  2 => '<div class="color-dark"><strike>??????</strike></div>'
+  0 => '<div id="act" class="color-red">' . $Translate->get_translate_phrase('_Forever') . '</div>',
+  1 => '<div id="ub" class="color-blue">' . $Translate->get_translate_phrase('_Unban') . '</div>',
+  2 => '<div id="exp" class="color-dark"><strike>Expired</strike></div>'
 ];
 $comms_type = [
-  0 => '<div class="color-red">' . $Translate->get_translate_phrase('_Forever') . '</div>',
-  1 => '<div class="color-blue">' . $Translate->get_translate_phrase('_Uncomm') . '</div>',
-  2 => '<div class="color-dark"><strike>??????</strike></div>'
+  0 => '<div id="act" class="color-red">' . $Translate->get_translate_phrase('_Forever') . '</div>',
+  1 => '<div id="ub" class="color-blue">' . $Translate->get_translate_phrase('_Uncomm') . '</div>',
+  2 => '<div id="exp" class="color-dark"><strike>Expired</strike></div>'
 ];
 
 if(!preg_match('^(STEAM_[0-1]:[0-1]:(\d+))|(7656119[0-9]{10})^', $Map['params']['id'])) {
