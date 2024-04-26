@@ -116,13 +116,20 @@
 									<?php
 									if ($SBComms[$i]['duration'] == '0' && $SBComms[$i]['status'] == 'ACTIVE') {
 										echo '<div class="color-red">' . $Translate->get_translate_module_phrase('module_page_profiles', '_Permanent') . '</div>';
-									} elseif ($SBComms[$i]['RemoveType'] == 'ACTIVE') {
-										echo '<div class="color-dark">' . $Translate->get_translate_module_phrase('module_page_profiles', '_Withdrawn') . '</div>';
-									} elseif ($SBComms[$i]['duration'] < '0' && time() >= $SBComms[$i]['ends']) {
-										echo '<div class="color-dark">' . $Translate->get_translate_module_phrase('module_page_profiles', '_Withdrawn') . '</div>';
-									} elseif (time() >= $SBComms[$i]['ends'] && $SBComms[$i]['duration'] != '0') {
+									}
+									elseif (time() >= $SBComms[$i]['ends'] && $SBComms[$i]['duration'] != '0') {
 										echo '<div class="color-green">' . $Translate->get_translate_module_phrase('module_page_profiles', '_Expired') . '</div>';
-									} else
+									}
+									elseif ($SBComms[$i]['status'] == 'EXPIRED') {
+										echo '<div id="exp" class="color-gray"><strike>' . $SBComms[$i]['ends'] . '</strike></div>';
+									}
+									elseif ($SBComms[$i]['status'] == 'ACTIVE') {
+										echo '<div id="act" class="color-gray">' . $SBComms[$i]['ends'] . '</div>';
+									}
+									elseif ($SBComms[$i]['status'] == 'UNMUTED') {
+										echo '<div id="ub" class="color-gray"><strike>' . $SBComms[$i]['ends'] . '</strike></div>';
+									}
+									else
 										echo '<div class="color-gray">' . $SBComms[$i]['ends'] . '</div>';
 									?>
 								</span>

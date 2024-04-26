@@ -781,6 +781,7 @@ class Player
                 `sa_mutes`.`created`,
                 `sa_mutes`.`duration`,
                 `sa_mutes`.`ends`,
+                `sa_mutes`.`status`,
                 `sa_mutes`.`reason`,
                 `sa_mutes`.`type`
                 FROM `sa_mutes`
