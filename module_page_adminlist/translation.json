@@ -1,0 +1,74 @@
+{
+    "_Group": {
+        "EN": "Group",
+        "RU": "Должность"
+    },
+    "_Bans": {
+        "EN": "Bans",
+        "RU": "Баны"
+    },
+    "_Mutes": {
+        "EN": "Mutes",
+        "RU": "Муты"
+    },
+    "_Warn": {
+        "EN": "Warnings",
+        "RU": "Выговоры"
+    },
+    "_Term": {
+        "EN": "Term",
+        "RU": "Срок"
+    },
+    "_Expires": {
+        "EN": "Expires",
+        "RU": "До"
+    },
+    "_Admins": {
+        "EN": "Total admins",
+        "RU": "Всего админов"
+    },
+    "_Forever": {
+        "EN": "Forever",
+        "RU": "Навсегда"
+    },
+    "_Expired": {
+        "EN": "Expired",
+        "RU": "Истёк"
+    },
+    "_Status": {
+        "EN": "Status",
+        "RU": "Статус"
+    },
+    "_Online": {
+        "EN": "Online",
+        "RU": "В сети"
+    },
+    "_Offline": {
+        "EN": "Offline",
+        "RU": "Не в сети"
+    },
+    "_Steamid": {
+        "EN": "SteamID",
+        "RU": "SteamID"
+    },
+    "_Mortal": {
+        "EN": "Ordinary admin",
+        "RU": "Рядовой админ"
+    },
+    "_VkOn": {
+        "EN": "Vk Profile",
+        "RU": "Профиль Vk"
+    },
+    "_VkOff": {
+        "EN": "Not listed",
+        "RU": "Не указано"
+    },
+    "_Bosses": {
+        "EN": "Bosses",
+        "RU": "Руководство"
+    },
+    "_DefaultAdmins": {
+        "EN": "Admins",
+        "RU": "Админы"
+    }
+}

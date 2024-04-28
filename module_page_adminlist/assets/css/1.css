@@ -1,0 +1,388 @@
+.adminlist_blocks {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.admin_card {
+    display: flex !important;
+    background-color: var(--grey-color);
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 300px;
+    width: 218px;
+    align-items: center;
+}
+
+@media (max-width:464px) {
+    .admin_card {
+    display: flex !important;
+    background-color: var(--grey-color);
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    align-items: center;
+}
+}
+
+.admins_avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.avatar_block {
+    position: relative;
+}
+
+.avatar_block:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    background: linear-gradient(0deg, rgb(0 0 0 / 60%), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.admin_nickname {
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--default-text-color);
+    width: 100%;
+    justify-content: center;
+    background-color: var(--bottom-line-table);
+    padding: 10px 0;
+    border-radius: 4px;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.admin_nickname svg{
+    width: 14px;
+    height: auto;
+    fill: var(--custom-text-color);
+    transition: .3s;
+}
+
+.admin_nickname:hover {
+    background-color: var(--button-color);
+    transition: .3s;
+}
+
+.admin_nickname:hover svg{
+    fill: var(--span-color);
+    transition: .3s;
+}
+
+.admin_status,
+.admin_group,
+.admin_term {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+    height: 38px;
+    border-radius: 4px;
+    background-color: var(--bottom-line-table);
+    align-items: center;
+    overflow: hidden;
+}
+
+.admin_status:hover svg,
+.admin_group:hover svg,
+.admin_term:hover svg {
+    fill: var(--default-text-color);
+    transition: .3s;
+}
+
+.admin_status_icon,
+.admin_group_icon,
+.admin_term_icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 38px;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    left: 0;
+    background-color: var(--card-color);
+    justify-content: center;
+}
+
+.admin_status_icon svg,
+.admin_group_icon svg,
+.admin_term_icon svg {
+    width: 12px;
+    height: auto;
+    fill: var(--custom-text-color);
+    transition: .3s;
+}
+
+.admin_status_text,
+.admin_status_desc,
+.admin_group_text,
+.admin_group_desc,
+.admin_term_text,
+.admin_term_desc {
+    font-size: 12px;
+    position: absolute;
+    font-weight: 700;
+    color: var(--span-color);
+    margin-left: 48px;
+    max-width: 145px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.adminlist_info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 5px;
+    position: relative;
+}
+
+.admin_card:hover .online_status,
+.admin_card:hover .online_text{
+    opacity: 1;
+    transition: .3s;
+}
+
+.online_text {
+    position: absolute;
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: 700;
+    bottom: 10px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.adminlist_buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.adminlist_button {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--button-color);
+    border-radius: 4px;
+    transition: .3s;
+    gap: 10px;
+    padding: 0 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--custom-text-color);
+    cursor: pointer;
+}
+
+.adminlist_button svg {
+    width: 12px;
+    height: auto;
+    fill: var(--custom-text-color);
+    transition: .3s;
+}
+
+.vk_button:hover {
+    background-color: #0077ff;
+    color: var(--default-text-color);
+    transition: .3s;
+}
+
+.steam_button:hover {
+    background-color: #000000;
+    color: var(--default-text-color);
+    transition: .3s;
+}
+
+.vk_button:hover svg,
+.steam_button:hover svg {
+    fill: var(--default-text-color);
+    transition: .3s;
+}
+
+.vk_button_inactive {
+    cursor:default;
+    opacity: .5;
+    user-select: none;
+}
+
+.hide_text {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    position: absolute;
+    transform: translateY(30px);
+}
+
+.hide_info {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+
+.show_text {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    position: absolute;
+    transform: translateY(-30px);
+}
+
+.admins_work {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 3px;
+    position: relative;
+}
+
+.admins_bans,
+.admins_comms,
+.admins_warns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--card-color);
+    padding: 8px 0;
+    border-radius: 4px;
+    cursor: help;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--custom-text-color);
+    user-select: none;
+    transition: .3s;
+    height: 35px;
+}
+
+.admins_bans:hover,
+.admins_comms:hover,
+.admins_warns:hover {
+    background-color: var(--button-color);
+    color: var(--default-text-color);
+    transition: .3s;
+}
+
+.warn {
+    color: var(--red-color) !important;
+}
+
+.admins_bans_desc,
+.admins_comms_desc,
+.admins_warns_desc {
+    display: flex;
+    width: 100%;
+    padding: 8px 0;
+    user-select: none;
+    position: relative;
+    transition: .3s;
+    justify-content: center;
+    align-items: center;
+}
+
+.admins_bans_desc svg,
+.admins_comms_desc svg,
+.admins_warns_desc svg {
+    width: 14px;
+    transition: .3s;
+    height: auto;
+    fill: var(--custom-text-color);
+    position: absolute;
+}
+
+.admins_bans_count,
+.admins_comms_count,
+.admins_warns_count {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.online_status {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 41px;
+    width: 70px;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 4px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: .0;
+    transition: .3s;
+    background: linear-gradient(0deg, rgb(14 14 14), transparent);
+}
+
+.offline_admin {
+    display: block;
+    margin-bottom: 5px;
+    width: 53px;
+    height: 4px;
+    background-color: var(--red-color);
+    border-radius: 50px;
+}
+
+.online_admin {
+    display: block;
+    margin-bottom: 5px;
+    width: 35px;
+    height: 4px;
+    background-color: var(--green-color);
+    border-radius: 50px;
+}
+
+.adminlist_title {
+    display: flex;
+    margin: 10px auto 20px;
+    border-bottom: 2px solid var(--bg-table-color);
+    width: max-content;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--custom-text-color);
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+.back {
+    background: url(/app/modules/module_page_adminlist/assets/img/back.png) no-repeat;
+    background-attachment: fixed;
+    background-size: inherit;
+    background-position: center;
+    margin-top: 0 !important;
+}
