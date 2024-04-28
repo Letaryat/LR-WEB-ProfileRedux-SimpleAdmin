@@ -380,7 +380,6 @@
 }
 
 .back {
-    background: url(/app/modules/module_page_adminlist/assets/img/back.png) no-repeat;
     background-attachment: fixed;
     background-size: inherit;
     background-position: center;
